@@ -1,7 +1,7 @@
 # Speedrun Clock
 
-This is a simple clock in c++ that you can use to speedrun games. 
-You can save your splits and times to a file once you finish the run.
+This is a simple clock in c++ that you can use while speedrunning games. 
+You can then save your splits and times to a file once you finish the run.
 
 # Instructions
 Start the clock from the command line.
