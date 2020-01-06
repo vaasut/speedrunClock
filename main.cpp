@@ -9,27 +9,23 @@
 
 int main() {
     std::clock_t start;
+    std::string filename;
     start = std::clock();
+    double finalTime;
 
-    std::thread first (splitOrEnd);     // spawn new thread that calls foo()
-    std::thread second (speedTimer);  // spawn new thread that calls bar(0)
+    std::thread first (splitOrEnd);
+    std::thread second (speedTimer);
 
     std::cout << "Start Run! \n";
 
     // synchronize threads:
     first.join();                // pauses until first finishes
-    second.join();              // pauses until second finishes
+    second.join();             // pauses until second finishes
 
-    printSeconds((double) ((std::clock() - start)/CLOCKS_PER_SEC));
-    saveSplits(mySplits);
-    // char save = 'y';
-    // std::cout << "Would you like to save your splits? (y/n)\n"; 
-    // std::cin >> save;
-    // if (save == 'n'){
-    //     std::cout << "Discarding Splits...\n";
-    // }
-    // else{
-    //     std::cout << "Saving Splits...\n";
-    // }
+    finalTime = (double) (std::clock() - start)/ (double) CLOCKS_PER_SEC;
+    printSeconds((int) finalTime);
+    std::cout << "Enter a file name for your splits.\n";
+    std::cin >> filename;
+    saveSplits(mySplits,finalTime,filename);
     return 0;
 }

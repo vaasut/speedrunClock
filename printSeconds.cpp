@@ -1,4 +1,4 @@
-void printSeconds(int seconds){
+void printSeconds(int seconds){ //converts seconds to hours:minutes:seconds
     int hours = seconds / 3600;
     int minutes = (seconds % 3600) / 60;
     int print_seconds = seconds % 60;
